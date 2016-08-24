@@ -1,0 +1,10 @@
+﻿@model MyUtilities.Models.StringExtensionViewModel
+@{
+    ViewData["Title"] = "String Extension";
+}
+<h2>@ViewData["Title"] Methods.</h2>
+
+@foreach (var model in @Model.StringExtensionModels)
+{
+    @Html.Partial("~/Views/String/PartialViews/StringExtensionSectionPartial.cshtml", model)
+}

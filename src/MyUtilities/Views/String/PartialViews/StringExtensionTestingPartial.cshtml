@@ -1,0 +1,67 @@
+﻿@model MyUtilities.Models.StringExtensionModel
+@{
+    var testingName = Model.Name;
+    ViewData["Title"] = "Testing " + testingName;
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@testingName</h3>
+<figure class="highlight">
+<pre><code class="language-html" data-lang="html"><span>@Model.SourceCode</span></code></pre>
+</figure>
+<form asp-controller="String" asp-action="Execute" method="post">
+    <input type="hidden" asp-for="@Model.SourceCode" />
+    <input type="hidden" asp-for="@Model.Name" />
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="@Model.SourceValue" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="@Model.SourceValue" class="form-control"></textarea>
+                <span asp-validation-for="@Model.SourceValue" class="text-danger"></span>
+            </div>
+        </div>
+        @if (Model.Name == "Between" || Model.Name == "Substring")
+        {
+        <div class="form-group">
+            <label asp-for="@Model.FromA" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="@Model.FromA" class="form-control" />
+                <span asp-validation-for="@Model.FromA" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.ToB" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="@Model.ToB" class="form-control" />
+                <span asp-validation-for="@Model.ToB" class="text-danger"></span>
+            </div>
+        </div>
+        }
+        else
+        {
+            <div class="form-group">
+                <label asp-for="@Model.TextToCheck" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="@Model.TextToCheck" class="form-control" />
+                    <span asp-validation-for="@Model.TextToCheck" class="text-danger"></span>
+                </div>
+            </div>
+
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Execute" class="btn btn-default" />
+                <a asp-action="Method" asp-route-name="@Model.Name" class="btn btn-default">Refresh</a>
+                <a asp-action="Index" class="btn btn-default">Back</a>
+            </div>
+        </div>
+    </div>
+</form>
+@if (!string.IsNullOrEmpty(Model.Result))
+{
+    <div class="alert alert-success" role="alert">Executed successfully!</div>
+<figure class="highlight">
+<pre><code class="language-html" data-lang="html"><span>@Model.Result</span></code></pre>
+</figure>
+}
