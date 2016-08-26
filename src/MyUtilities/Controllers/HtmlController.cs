@@ -37,7 +37,7 @@ namespace MyUtilities.Controllers
         public IActionResult XmlExample()
         {
             var model = new HtmlToTreeModel();
-            model.Result = HtmlService.ParsingXmlToTree(model.SourceValue);
+            model.Result = HtmlService.ParsingXmlToTree(HtmlService.GetXMLExample);
             return View("~/Views/Html/TreeResultDisplay.cshtml", model);
         }
     }
