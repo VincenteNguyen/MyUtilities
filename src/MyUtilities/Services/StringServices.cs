@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MyUtilities.Extensions;
+using MyUtilities.Models;
+using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyUtilities.Services
 {
@@ -78,6 +78,58 @@ namespace MyUtilities.Services
             return substringFromAtoB;
         }";
             }
+        }
+
+        public static StringExtensionModel GetStringExtension(string methodName)
+        {
+            var model = new StringExtensionModel { Name = methodName };
+            switch (methodName)
+            {
+                case "Between":
+                    model.SourceCode = Between;
+                    break;
+                case "Before":
+                    model.SourceCode = Before;
+                    break;
+                case "After":
+                    model.SourceCode = After;
+                    break;
+                case "Contains":
+                    model.SourceCode = Contains;
+                    break;
+                case "Substring":
+                    model.SourceCode = Substring;
+                    break;
+                default:
+                    return null;
+            }
+            return model;
+        }
+
+        public static string ExecuteMethod(StringExtensionModel model)
+        {
+            string result;
+            switch (model.Name)
+            {
+                case "Between":
+                    result = model.SourceValue.Between(model.FromA, model.ToB);
+                    break;
+                case "Before":
+                    result = model.SourceValue.Before(model.TextToCheck);
+                    break;
+                case "After":
+                    result = model.SourceValue.After(model.TextToCheck);
+                    break;
+                case "Contains":
+                    result = model.SourceValue.Contains(model.TextToCheck, StringComparison.OrdinalIgnoreCase) ? "Yes" : "No";
+                    break;
+                case "Substring":
+                    result = model.SourceValue.Substring(model.FromA, model.ToB);
+                    break;
+                default:
+                    return string.Empty;
+            }
+            return result;
         }
     }
 }

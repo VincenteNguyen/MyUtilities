@@ -2,16 +2,12 @@
 
 namespace MyUtilities.Models
 {
-    public class StringExtensionModel
+    public class StringExtensionModel : BaseResultModel
     {
         public string Name { get; set; }
 
         [Display(Name = "Source code")]
         public string SourceCode { get; set; }
-
-        [Required]
-        [Display(Name = "Source value")]
-        public string SourceValue { get; set; }
 
         [Display(Name = "From string")]
         [Required]
@@ -24,7 +20,5 @@ namespace MyUtilities.Models
         [Display(Name = "Text to check")]
         [Required]
         public string TextToCheck { get; set; }
-
-        public string Result { get; set; }
     }
 }

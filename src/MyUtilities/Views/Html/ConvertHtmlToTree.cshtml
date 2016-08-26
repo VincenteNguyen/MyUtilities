@@ -1,0 +1,29 @@
+﻿@model MyUtilities.Models.HtmlToTreeModel
+@{
+    ViewData["Title"] = "Convert Html to Tree";
+}
+<h2>@ViewData["Title"]</h2>
+<form asp-controller="Html" asp-action="ConvertHtmlToTree" method="post">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="@Model.SourceValue" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="@Model.SourceValue" class="form-control" style="height:300px;"></textarea>
+                <span asp-validation-for="@Model.SourceValue" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Execute" class="btn btn-default" />
+                <a asp-action="Index" class="btn btn-default">Refresh</a>
+                <a asp-action="XmlExample" class="btn btn-default">Take an example</a>
+            </div>
+        </div>
+    </div>
+</form>
+@if (!string.IsNullOrEmpty(Model.Result))
+{
+    <div class="alert alert-success" role="alert">Executed successfully!</div>
+    <div style="display:block">@Html.Raw(Model.Result)</div>
+}
