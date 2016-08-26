@@ -1,0 +1,39 @@
+﻿@model MyUtilities.Models.EnumGeneratorViewModel
+@{
+    ViewData["Title"] = "Enum generator";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Enum" asp-action="Generator" method="post">
+    <div class="bs-example bs-example-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row form-group">
+            <label asp-for="@Model.Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="@Model.Name" class="form-control"/>
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <button id="btnAddField" class="btn btn-default">Add Key-Value</button>
+        <div class="row "></div>
+        <div id="dynamic-div"></div>
+        <div class="form-group row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Execute" class="btn btn-primary" />
+                <a asp-action="Generator" class="btn btn-default">Refresh</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.SourceCode))
+{
+    <div class="alert alert-success" role="alert">Executed successfully!</div>
+    <figure class="highlight">
+<pre><code class="language-html" data-lang="html"><span>@Model.SourceCode</span></code></pre>
+    </figure>
+}
+@section scripts{
+    <script src="~/js/enum.js" asp-append-version="true"></script>
+}

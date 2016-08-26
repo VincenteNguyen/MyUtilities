@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyUtilities.Models
 {
-    public class BaseResultModel
+    public class BaseResultModel : BaseModel
     {
         [Required]
         [Display(Name = "Source value")]

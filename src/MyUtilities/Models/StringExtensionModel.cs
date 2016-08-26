@@ -4,11 +4,6 @@ namespace MyUtilities.Models
 {
     public class StringExtensionModel : BaseResultModel
     {
-        public string Name { get; set; }
-
-        [Display(Name = "Source code")]
-        public string SourceCode { get; set; }
-
         [Display(Name = "From string")]
         [Required]
         public string FromA { get; set; }

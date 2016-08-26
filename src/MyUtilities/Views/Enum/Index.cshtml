@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Enum extension";
+    List<MyUtilities.Models.BaseModel> methods = ViewBag.Methods;
+}
+<h2>@ViewData["Title"]</h2>
+@foreach (var model in methods)
+{
+    @Html.Partial("~/Views/Enum/PartialViews/SectionPartial.cshtml", model)
+}

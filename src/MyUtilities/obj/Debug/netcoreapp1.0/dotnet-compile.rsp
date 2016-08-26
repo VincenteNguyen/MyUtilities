@@ -197,11 +197,14 @@
 --resource:"C:\MyRepositories\MyUtilities\src\MyUtilities\obj\Debug\netcoreapp1.0\MyUtilitiesdotnet-compile.deps.json",MyUtilities.deps.json
 C:\MyRepositories\MyUtilities\src\MyUtilities\Program.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Startup.cs
+C:\MyRepositories\MyUtilities\src\MyUtilities\Controllers\EnumController.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Controllers\HomeController.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Controllers\HtmlController.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Controllers\StringController.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Extensions\StringExtensions.cs
+C:\MyRepositories\MyUtilities\src\MyUtilities\Models\BaseModel.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Models\BaseResultModel.cs
+C:\MyRepositories\MyUtilities\src\MyUtilities\Models\EnumGeneratorViewModel.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Models\HtmlToTreeModel.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Models\HttpBuilderModel.cs
 C:\MyRepositories\MyUtilities\src\MyUtilities\Models\StringExtensionModel.cs
