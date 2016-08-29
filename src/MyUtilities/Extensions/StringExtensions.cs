@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Text;
 
 namespace MyUtilities.Extensions
 {
@@ -51,6 +50,20 @@ namespace MyUtilities.Extensions
             var indexBFromA = subStringFromA.IndexOf(b, StringComparison.Ordinal);
             var substringFromAtoB = subStringFromA.Substring(0, indexBFromA + b.Length);
             return substringFromAtoB;
+        }
+
+        public static string RemoveDiacritics(this string s)
+        {
+            var normalizedString = s.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+            foreach (var c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+            return stringBuilder.ToString();
         }
     }
 }

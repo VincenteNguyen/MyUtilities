@@ -17,6 +17,7 @@ namespace MyUtilities.Controllers
                 StringServices.GetStringExtension("After"),
                 StringServices.GetStringExtension("Contains"),
                 StringServices.GetStringExtension("Substring"),
+                StringServices.GetStringExtension("RemoveDiacritics"),
             };
             return View(viewModel);
         }

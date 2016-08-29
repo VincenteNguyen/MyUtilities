@@ -80,6 +80,26 @@ namespace MyUtilities.Services
             }
         }
 
+        public static string RemoveDiacritics
+        {
+            get
+            {
+                return @"        public static string RemoveDiacritics(this string s)
+        {
+            var normalizedString = s.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+            foreach (var c in normalizedString)
+            {
+                if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+            return stringBuilder.ToString();
+        }";
+            }
+        }
+
         public static StringExtensionModel GetStringExtension(string methodName)
         {
             var model = new StringExtensionModel { Name = methodName };
@@ -99,6 +119,9 @@ namespace MyUtilities.Services
                     break;
                 case "Substring":
                     model.SourceCode = Substring;
+                    break;
+                case "RemoveDiacritics":
+                    model.SourceCode = RemoveDiacritics;
                     break;
                 default:
                     return null;
@@ -125,6 +148,9 @@ namespace MyUtilities.Services
                     break;
                 case "Substring":
                     result = model.SourceValue.Substring(model.FromA, model.ToB);
+                    break;
+                case "RemoveDiacritics":
+                    result = model.SourceValue.RemoveDiacritics();
                     break;
                 default:
                     return string.Empty;
