@@ -68,6 +68,7 @@ Jack
                 sb.Append(",");
             }
             sb.Length--;
+
             var value = sb.ToString();
             return value;
         }
