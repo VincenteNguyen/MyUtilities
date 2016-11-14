@@ -14,6 +14,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyUtilities", "src\MyUtilit
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConsoleApplications", "src\ConsoleApplications\ConsoleApplications.xproj", "{B5FE2A0B-7267-4D18-A065-54A79B06AA4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "..\..\Users\PC57\Documents\Visual Studio 2015\Projects\WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{EF796CC3-D031-4A18-B462-0A121367D306}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{B5FE2A0B-7267-4D18-A065-54A79B06AA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5FE2A0B-7267-4D18-A065-54A79B06AA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5FE2A0B-7267-4D18-A065-54A79B06AA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF796CC3-D031-4A18-B462-0A121367D306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF796CC3-D031-4A18-B462-0A121367D306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF796CC3-D031-4A18-B462-0A121367D306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF796CC3-D031-4A18-B462-0A121367D306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
