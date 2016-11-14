@@ -1,0 +1,2 @@
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.csproj.GenerateResource.Cache
