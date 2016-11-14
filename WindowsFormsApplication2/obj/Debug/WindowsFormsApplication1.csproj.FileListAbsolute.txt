@@ -1,0 +1,7 @@
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe.config
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.exe
+C:\MyRepositories\MyUtilities\WindowsFormsApplication2\obj\Debug\WindowsFormsApplication2.pdb
